@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    background-color: #f0f0f0;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+header {
+    background-color: rgb(66, 37, 66);
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav {
+    padding-top: 10px;
+    font-size: 20px;
+    font-style: normal;
+}
+
+.nav__link {
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.header__logo {
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+}
+
+.intro__content {
+    padding-top: 100px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(66, 37, 66);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.intro {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.intro__text {
+    font-family: "Alfa Slab One", serif;
+    font-size: 6rem; /* Ajusta el tamaño según sea necesario */
+    color: white;
+}
+
+.about__container, .experiencia__container, .proyectos__container, .formacion__container {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about__title, .experiencia__title, .proyectos__title, .formacion__title {
+    font-family: "Alfa Slab One", serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.skills__title {
+    font-family: "Alfa Slab One", serif;
+    font-size: 1.5rem;
+}
+
+.skills span {
+    background-color: #555;
+    color: white;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: 0 0 10px black;
+}
+
+.contacto__title {
+    font-family: "Alfa Slab One", serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+footer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer input, footer textarea {
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 30px violet;
+    cursor: pointer;
+}
+
+footer input:focus, footer textarea:focus {
+    outline: none;
+    border: 2px solid #555;
+}
+
+footer button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+footer button:hover {
+    box-shadow: 0 0 30px violet;
+    background-color: #777;
+}
+
+.social-media a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #ddd;
+}
+
+/* Dark Mode Styles */
+body.dark-mode header {
+    background-color: #333;
+}
+
+body.dark-mode .nav__link {
+    color: #e0e0e0;
+}
+
+body.dark-mode .intro__content {
+    background-color: #333;
+}
+
+body.dark-mode .skills span {
+    background-color: #888;
+    box-shadow: 0 0 10px #222;
+}
+
+body.dark-mode footer {
+    background-color: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode footer input, 
+body.dark-mode footer textarea {
+    background-color: #444;
+    color: #e0e0e0;
+    box-shadow: 0 0 30px #444;
+}
+
+body.dark-mode footer button {
+    background-color: #666;
+}
+
+body.dark-mode footer button:hover {
+    background-color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav__link {
+        padding: 10px;
+    }
+
+    .intro__text {
+        font-size: 4rem;
+    }
+
+    .about__title, .experiencia__title, .proyectos__title, .formacion__title {
+        font-size: 2.5rem;
+    }
+
+    footer input, footer textarea {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    .nav__link {
+        padding: 5px;
+    }
+
+    .intro__text {
+        font-size: 3rem;
+    }
+
+    .about__title, .experiencia__title, .proyectos__title, .formacion__title {
+        font-size: 2rem;
+    }
+
+    footer input, footer textarea {
+        width: 90%;
+    }
+
+    footer button {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* Animaciones al hacer scroll */
+    section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    section.animate {
+    opacity: 1;
+    transform: translateY(0);
+    }
+
+    /* Efecto Parallax */
+    .parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+
+}
